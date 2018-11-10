@@ -7,6 +7,8 @@ public class Alumno {
     // la edad del alumno
     private int edad;
 
+    
+
     /**
      * Crea un alumno nuevo
      */
@@ -14,6 +16,16 @@ public class Alumno {
         nombre = nombreCompleto;
         numeroMatricula = numeroMatriculaAlumno;
         edad = edadAlumno;
+        if(nombre.length () < 3){
+            System.out.println("El nombre introducido es demasido corto");
+        
+        }
+        if(numeroMatricula.length () < 4){
+            System.out.println("El número de matrícula introducido es demasido corto");
+        
+        }
+        
+        
     }
 
     /**
@@ -41,7 +53,7 @@ public class Alumno {
      * Devuelve el nombre de usuario que el alumno debe configurar
      * en su cuenta de Github en formato de 7 caracateres
      */
-    public String getNombreUsuarioGithub() {
+    public String getNombreUsuarioGithub() {       
         return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
     }
 }
