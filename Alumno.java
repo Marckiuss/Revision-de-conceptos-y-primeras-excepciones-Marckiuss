@@ -1,5 +1,5 @@
 public class Alumno {
-    
+
     // el nombre completo del alumno
     private String nombre;
     // el numero de matricula
@@ -7,7 +7,7 @@ public class Alumno {
     // la edad del alumno
     private int edad;
 
-    
+
 
     /**
      * Crea un alumno nuevo
@@ -15,45 +15,50 @@ public class Alumno {
     public Alumno(String nombreCompleto, String numeroMatriculaAlumno, int edadAlumno) {
         nombre = nombreCompleto;
         numeroMatricula = numeroMatriculaAlumno;
-        edad = edadAlumno;
-        if(nombre.length () < 3){
-            System.out.println("El nombre introducido es demasido corto");
-        
-        }
-        if(numeroMatricula.length () < 4){
-            System.out.println("El número de matrícula introducido es demasido corto");
-        
-        }
-        
-        
-    }
+        edad = edadAlumno;        
+       if(nombre.length () < 3){
+           System.out.println("El nombre introducido es demasido corto");
 
+        }
+       if(numeroMatricula.length () < 4){
+            System.out.println("El número de matrícula introducido es demasido corto");
+
+        }
+
+    }
     /**
      * Devuelve el nombre completo del alumno
      */
     public String getNombre() {
         return nombre;
     }
-    
+
     /**
      * Cambia el nombre del alumno
      */
     public void cambiarnombre(String nuevoNombre) {
         nombre = nuevoNombre;
     }
-    
+
     /**
      * Imprime por pantalla los detalles del alumno
      */
     public void imprimeDetalles() {
         System.out.println(nombre + " (" + numeroMatricula + ") - " + edad + " aÃ±os");
     }
-    
+
     /**
      * Devuelve el nombre de usuario que el alumno debe configurar
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {       
-        return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+        if(nombre.length () >= 3){
+            nombre = nombre.substring (0,3);
+        }   
+        if (numeroMatricula.length () >= 4) {
+            numeroMatricula.substring (0,4);
+        }
+        
+        return nombre + numeroMatricula;
     }
 }
